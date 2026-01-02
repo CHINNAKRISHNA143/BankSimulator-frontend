@@ -10,8 +10,8 @@ function showSection(id){
 function createAccount(){
     const data = {
         name : document.getElementById("c-name").value,
-        email : documnet.getElementById("c-email").value,
-        balance : documnet.getElementById("c-balance").value
+        email : document.getElementById("c-email").value,
+        balance : document.getElementById("c-balance").value
     };
 
     fetch(BASE_URL+"/accounts/create" ,{
@@ -24,6 +24,8 @@ function createAccount(){
     .then(res => res.json())
     .then(result => {
         document.getElementById("create-result").innerText = "Account is Created and here is your Account Number "+result.accountNumber;
+        console.log("Account is created successfully..!");
+        
     });
     
 
@@ -45,6 +47,7 @@ function deposite(){
     .then(res => res.text())
     .then(msg => {
         document.getElementById("deposite-result").innerText = msg;
+        console.log("Amount is deposited successfully..!");
     });
 
 }
