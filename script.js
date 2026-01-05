@@ -49,7 +49,7 @@ function deposite(){
         document.getElementById("deposite-result").innerText = msg;
         console.log("Amount is deposited successfully..!");
     });
-
+    
 }
 
 function withdraw(){
@@ -57,7 +57,7 @@ function withdraw(){
         accNo : document.getElementById("w-acc").value,
         amount : document.getElementById("w-amount").value
     };
-
+    
     fetch(BASE_URL+"/transactions/withdraw" ,{
         method : "POST",
         headers : {
@@ -68,8 +68,9 @@ function withdraw(){
     .then(res => res.text())
     .then(msg => {
         document.getElementById("withdraw-result").innerText = msg;
+        console.log("Amount is withdraw successfully..!");
     });
-
+    
 }
 
 function transfer(){
@@ -78,7 +79,7 @@ function transfer(){
         toAcc : document.getElementById("t-to").value,
         amount : document.getElementById("t-amount").value
     }
-
+    
     fetch(BASE_URL+"/transactions/transfer",{
         method : "POST",
         headers : {
@@ -89,6 +90,7 @@ function transfer(){
     .then(res => res.text())
     .then(msg => {
         document.getElementById("trasfer-result").innerText = msg;
+        console.log("Amount is Transfer successfully..!");
     });
 }
 
